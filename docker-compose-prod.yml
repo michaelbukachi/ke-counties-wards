@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  county-wards:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    logging:
+      driver: journald
+    container_name: county-wards
+    labels:
+      - traefik.backend=county-wards
+      - traefik.frontend.rule=Host:counties.farmdrive.co.ke
+      - traefik.docker.network=proxy
+      - traefik.port=8004
+    expose:
+      - 8004
+    environment:
+      - APP_ENVIRONMENT=production
+      - DEPLOYED
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

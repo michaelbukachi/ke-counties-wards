@@ -1,0 +1,8 @@
+Flask==1.0.2
+flask-restplus==0.12.1
+gunicorn==19.9.0
+gevent==1.4.0
+pytest==4.0.2
+pytest-cov==2.6.1
+pytest-mock==1.10.1
+sentry-sdk[flask]==0.7.10
