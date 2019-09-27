@@ -1,5 +1,3 @@
-import multiprocessing
-
 import gunicorn
 from gevent import monkey
 
