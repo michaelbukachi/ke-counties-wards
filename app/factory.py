@@ -26,9 +26,6 @@ class Factory:
         self.flask = Flask(__name__, **kwargs)
         self.flask.config.from_object(config[self._environment])
         # setup logging
-        file_handler = RotatingFileHandler('logs/county_ward.log', maxBytes=10000, backupCount=1)
-        file_handler.setLevel(logging.INFO)
-        self.flask.logger.addHandler(file_handler)
         stdout = logging.StreamHandler(sys.stdout)
         stdout.setLevel(logging.DEBUG)
         self.flask.logger.addHandler(stdout)
@@ -37,6 +34,6 @@ class Factory:
 
     def set_api(self):
         from .resources import api
-        api.init_app(self.flask, version='1.0.0', title='County - Wards Util')
+        api.init_app(self.flask, version='1.0.0', title='County - Wards API')
 
 
