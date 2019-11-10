@@ -9,8 +9,6 @@ class Config:
     APP_STATIC = os.path.join(APP_ROOT, 'static')
     SRC_FILE = os.path.join(APP_STATIC, 'src.csv')
 
-    DEPLOYED = bool(os.getenv('DEPLOYED', False))
-
 
 class DevConfig(Config):
     DEBUG = True
