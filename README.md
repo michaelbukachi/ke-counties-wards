@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/michaelbukachi/ke-counties-wards.svg?branch=master)](https://travis-ci.org/michaelbukachi/ke-counties-wards)
+
 # Ke County - Wards API 
 
 A simple API to list counties in Kenya and their wards. Check it out at:
