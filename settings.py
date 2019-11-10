@@ -1,5 +1,5 @@
-import gunicorn
 import os
+
 from gevent import monkey
 
 PORT = os.getenv('PORT', 8004)
