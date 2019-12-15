@@ -8,9 +8,7 @@ A simple API to list counties in Kenya and their wards. Check it out at:
 
 #### Why?
 Needed this for a project at work. Couldn't find anything online.
-
-#### But it doesn't have...
-This was a simple project done a couple of hours. The goal wasn't to 
+This was a simple project done in a couple of hours. The goal wasn't to 
 make it feature rich. Pull requests are welcome though :smile:.
 
 #### Libraries used
