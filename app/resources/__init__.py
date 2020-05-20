@@ -1,4 +1,4 @@
-from flask_restplus import Api
+from flask_restx import Api
 
 from .data import ns as data_ns
 

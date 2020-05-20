@@ -1,4 +1,5 @@
-from flask_restplus import Namespace, Resource, fields
+from flask_restx import Namespace, Resource, fields
+from werkzeug.exceptions import NotFound
 
 from app import get_counties_and_wards
 
@@ -33,3 +34,19 @@ class GetCountyWards(Resource):
         county = county.title()
         wards = counties.get(county, [])
         return [{'name': ward} for ward in wards]
+
+
+@ns.route('/wards/<string:ward>/county')
+class GetCountyFromWard(Resource):
+
+    @ns.marshal_with(single_model)
+    def get(self, ward):
+        """
+        Get the county of a ward
+        """
+        counties = get_counties_and_wards()
+        for county in counties:
+            if ward.lower() in [w.lower() for w in counties[county]]:
+                return {'name': county.title()}
+
+        raise NotFound('Ward not found')
